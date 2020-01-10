@@ -23,7 +23,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/login-app');
+  mongoose.connect('mongodb://0.0.0.0/login-app');
   mongoose.set('debug', true);
 }
 
@@ -78,6 +78,6 @@ app.use(function(err, req, res, next) {
   }});
 });
 
-const server = app.listen( process.env.PORT || 5000, function(){
+const server = app.listen( process.env.PORT || 5000, '0.0.0.0', function(){
   console.log('Listening on port ' + server.address().port);
 });
