@@ -1,12 +1,71 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/authActions';
+import ListErrors from '../common/ListErrors';
 import './Login.scss'
 
 import { Logo } from '../Logo';
 
 
 class Login extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      redirectToReferrer: false,
+      email: '',
+      password: '',
+      errors: {}
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.auth && this.props.auth.isAuthenticated) {
+      this.setState({ redirectToReferrer: true });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.setState({ redirectToReferrer: true });
+    }
+
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const userData = {
+      user: {
+        email: this.state.email,
+        password: this.state.password
+      }
+    };
+
+    this.props.loginUser(userData);
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
   render() {
+    const { from } = this.props.location.state || { from: { pathname: "/" } };
+    const { redirectToReferrer } = this.state;
+
+    let { email, password } = this.state;
+
+    if (redirectToReferrer) {
+      return <Redirect to={from} />;
+    }
+
     return (
       <section className="hero is-fullheight landing">
         <div className="hero-body">
@@ -16,6 +75,7 @@ class Login extends Component {
                 <Logo />
               </div>
               <h3 className="title">Login</h3>
+              <ListErrors errors={this.props.errors} />
               <form>
                 <div className="field">
                   <p className="control has-icons-left has-icons-right">
@@ -24,6 +84,8 @@ class Login extends Component {
                       type="email"
                       name="email"
                       placeholder="Email"
+                      value={email}
+                      onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
                       <i className="fas fa-envelope"></i>
@@ -40,13 +102,15 @@ class Login extends Component {
                       type="password"
                       name="password"
                       placeholder="Password"
+                      value={password}
+                      onChange={this.onChange}
                     />
                     <span className="icon is-small is-left">
                       <i className="fas fa-lock"></i>
                     </span>
                   </p>
                 </div>
-                <button className="button is-block is-info is-large is-fullwidth">Submit</button>
+                <button className="button is-block is-info is-large is-fullwidth" onClick={this.onSubmit}>Submit</button>
               </form>
               <div>
                 <p className="has-text-grey sub-menu">
@@ -63,4 +127,9 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(mapStateToProps, { loginUser })(Login);
