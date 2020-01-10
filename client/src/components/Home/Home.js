@@ -7,12 +7,12 @@ class Home extends Component {
     return (
       <div className="container is-two-quarters">
         <Navbar />
-        <div class="card">
-          <div class="card-content">
-            <p class="title">
+        <div className="card">
+          <div className="card-content">
+            <p className="title">
               Welcome to Home Page
             </p>
-            <p class="subtitle">
+            <p className="subtitle">
               Coded by Anish Dhamodaran
             </p>
           </div>
