@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "demo": "npm install && npm start",
     "start": "npm install --prefix client && npm run build --prefix client && node server",
     "start:local": "npm run build --prefix client && node server",
     "server": "nodemon server",
