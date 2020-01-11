@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000;
 let HOST = "http://localhost:" + PORT;
 
 if (isProduction) {
-  HOST = "http://0.0.0.0:" + PORT;
+  HOST = "https://loginappanishd19.herokuapp.com";
 }
 
 export const SERVICE_CONSTANT = {
