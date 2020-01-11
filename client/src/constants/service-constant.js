@@ -1,7 +1,7 @@
 const isProduction = process.env.NODE_ENV === "production";
 const PORT = process.env.PORT || 5000;
 
-let HOST = "http://0.0.0.0:" + PORT;
+let HOST = "http://localhost:" + PORT;
 
 if (isProduction) {
   HOST = "http://0.0.0.0:" + PORT;

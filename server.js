@@ -23,7 +23,7 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://0.0.0.0/login-app');
+  mongoose.connect('mongodb://localhost/login-app');
   mongoose.set('debug', true);
 }
 
