@@ -5,7 +5,6 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.13.0",
@@ -21,10 +20,25 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "cross-env CI=true npm test -- --env=jsdom --coverage -u --colors --watchAll",
+    "test:coverage": "cross-env CI=true npm test -- --env=jsdom --coverage -u --colors",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/components/**/*.{js,jsx,ts,tsx}",
+      "./src/App.js",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90,
+        "statements": 90
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -37,5 +51,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/user-event": "^7.2.1",
+    "cross-env": "^6.0.3",
+    "react-test-renderer": "^16.12.0"
   }
 }

@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="hero is-fullheight landing"
+>
+  <div
+    className="hero-body"
+  >
+    <div
+      className="container has-text-centered"
+      id="login-form"
+    >
+      <div
+        className="box"
+      >
+        <div>
+          <div
+            className="logo"
+          >
+            Login App
+          </div>
+        </div>
+        <h3
+          className="title"
+        >
+          Register
+        </h3>
+        <ul
+          className="error-messages help is-danger"
+        />
+        <form>
+          <div
+            className="field"
+          >
+            <p
+              className="control has-icons-left has-icons-right"
+            >
+              <input
+                className="input"
+                name="username"
+                onChange={[Function]}
+                placeholder="Username"
+                type="text"
+                value=""
+              />
+              <span
+                className="icon is-small is-left"
+              >
+                <i
+                  className="fas fa-user"
+                />
+              </span>
+            </p>
+          </div>
+          <div
+            className="field"
+          >
+            <p
+              className="control has-icons-left has-icons-right"
+            >
+              <input
+                className="input"
+                name="firstname"
+                onChange={[Function]}
+                placeholder="firstname"
+                type="text"
+                value=""
+              />
+              <span
+                className="icon is-small is-left"
+              >
+                <i
+                  className="fas fa-user"
+                />
+              </span>
+            </p>
+          </div>
+          <div
+            className="field"
+          >
+            <p
+              className="control has-icons-left has-icons-right"
+            >
+              <input
+                className="input"
+                name="lastname"
+                onChange={[Function]}
+                placeholder="lastname"
+                type="text"
+                value=""
+              />
+              <span
+                className="icon is-small is-left"
+              >
+                <i
+                  className="fas fa-user"
+                />
+              </span>
+            </p>
+          </div>
+          <div
+            className="field"
+          >
+            <p
+              className="control has-icons-left has-icons-right"
+            >
+              <input
+                className="input"
+                name="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="email"
+                value=""
+              />
+              <span
+                className="icon is-small is-left"
+              >
+                <i
+                  className="fas fa-envelope"
+                />
+              </span>
+            </p>
+          </div>
+          <div
+            className="field is-horizontal is-pulled-left"
+          >
+            <div
+              className="field-label is-normal"
+            >
+              <label
+                className="label"
+              >
+                Gender
+              </label>
+            </div>
+            <div
+              className="field-body"
+            >
+              <div
+                className="field radio-field"
+              >
+                <div
+                  className="control"
+                >
+                  <label
+                    className="radio"
+                  >
+                    <input
+                      checked={true}
+                      name="gender"
+                      onChange={[Function]}
+                      type="radio"
+                      value="male"
+                    />
+                    Male
+                  </label>
+                  <label
+                    className="radio"
+                  >
+                    <input
+                      checked={false}
+                      name="gender"
+                      onChange={[Function]}
+                      type="radio"
+                      value="female"
+                    />
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="field is-horizontal is-pulled-right"
+          >
+            <div
+              className="field-label is-normal"
+            >
+              <label
+                className="label"
+              >
+                Country
+              </label>
+            </div>
+            <div
+              className="field-body"
+            >
+              <div
+                className="field is-narrow"
+              >
+                <div
+                  className="control"
+                >
+                  <div
+                    className="select is-fullwidth"
+                  >
+                    <select
+                      name="country"
+                      onChange={[Function]}
+                      value="India"
+                    >
+                      <option
+                        value="India"
+                      >
+                        India
+                      </option>
+                      <option
+                        value="US"
+                      >
+                        US
+                      </option>
+                      <option
+                        value="UK"
+                      >
+                        UK
+                      </option>
+                      <option
+                        value="China"
+                      >
+                        China
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="field"
+          >
+            <p
+              className="control has-icons-left"
+            >
+              <input
+                className="input"
+                name="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <span
+                className="icon is-small is-left"
+              >
+                <i
+                  className="fas fa-lock"
+                />
+              </span>
+            </p>
+          </div>
+          <button
+            className="button is-block is-info is-large is-fullwidth"
+            onClick={[Function]}
+          >
+            Submit
+          </button>
+        </form>
+        <div>
+          <p
+            className="has-text-grey sub-menu"
+          >
+            <a
+              href="/login"
+              onClick={[Function]}
+            >
+              Login
+            </a>
+              · 
+            <a
+              href="../"
+            >
+              Forgot Password
+            </a>
+              · 
+            <a
+              href="../"
+            >
+              Need Help?
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
